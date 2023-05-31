@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>게시글</title>
+</head>
+<body>
+	<a href="/createlist">게시글 작성</a>
+	
+	<h1>게시판</h1>
+	<table>
+			<tr>
+			<th>번호</th>
+			<th>제목</th>
+			</tr>
+			
+			<tr th:each="list: ${listEntity}">
+			  <td th:text="${list.id}"></td>
+			  <td>
+			  <a th:text="${list.title}" th:href="@{/detail(id=${list.id})}"></a>
+			  </td>
+			</tr>
+	</table>
+	
+	
+</body>
+</html>

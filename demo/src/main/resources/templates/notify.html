@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>게시글 수정</title>
+</head>
+<body>
+	
+	<form th:action="@{/detail/update(id=${board.id})}" method="post">
+	
+		<div>
+			<input type="text" th:value="${board.title}" name="title">
+			
+		</div>
+		<div>
+			<input type="text" th:value="${board.content}" name="content">			
+		</div>
+		<div>
+			<button type="submit">수정</button>			
+		</div>
+	</form>
+</body>
+</html>
